@@ -12,3 +12,4 @@
 11-11-lists script  that lists all files (even ones with names beginning with a period character, which are normally hidden) in the current directory and the parent of the working directory and the /boot directory (in this order), in long format.
 12-12-file_type script that prints the type of the file named iamafile located in /tmp
 13-13-symbolic_link script to Create a symbolic link to /bin/ls, named __ls__. The symbolic link should be created in the current working directory.
+14-14-copy_html script that copies all the HTML files from the current working directory to the parent of the working directory, but only copy files that did not exist in the parent of the working directory or were newer than the versions in the parent of the working directory.
