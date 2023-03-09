@@ -7,3 +7,4 @@
 6-multiple_permissions script that adds execute permission to the owner and the group owner, and read permission to other users, to the file hello.
 7-everybody script that adds execution permission to the owner, the group owner and the other users, to the file hello (updated)
 8-James_Bond script to set no permissions for Owner and Group , all permissions for other users
+9-John_Doe script to set the mode for hello to -rwxr-x-wx
