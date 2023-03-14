@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "ibase=2;obase=A;$BINARY" | bc
