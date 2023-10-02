@@ -2,7 +2,7 @@
 # This script displays a message indefinitely then another when SIGTERM signal
 
 sudo touch /var/run/myscript.pid
-sudo echo $$ >> /var/run/myscript.pid
+sudo echo $$ | sudo tee -a /var/run/myscript.pid
 while (( 1 ))
 do
 	echo "To infinity and beyond"
