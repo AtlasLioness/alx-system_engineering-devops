@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script displqys all active IPv4 IPs on the machine
+
+hostname -I | tr " " "\n" | head -n -1
