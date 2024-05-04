@@ -1,7 +1,7 @@
 # Puppet script that creates file in /tmp
 
-file { 'ALX':
-  path    => ' /tmp/school',
+file { '/tmp/school':
+  ensure    => 'file',
   mode    => '0744',
   owner   => 'www-data',
   group   => 'www-data',
