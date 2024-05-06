@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# script that configures a nez ubuntu machine
+
+apt-get update
+apt-get install -y nginx
+touch /var/www/html/index.html
+echo "Hello World!" > /var/www/html/index.html
+service nginx start
