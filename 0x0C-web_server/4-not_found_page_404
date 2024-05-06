@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# script that configures a nez ubuntu machine
+
+apt-get update
+apt-get install -y nginx
+touch /var/www/html/index.html
+echo "Hello World!" > /var/www/html/index.html
+ufw allow 'Nginx HTTP'
+new="https://www.youtube.com/watch?v=QH2-TGUlwu4"
+sed -i "/listen 80 default_server/a rewrite ^/redirect_me $new permanent;" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/error_404_page.html
+error_page="error_404_page.html"
+shortcut="/error_404_page.html {root /usr/share/nginx/html;\n internal;}"
+sed -i "/listen 80 default_server/a error_page 404 /$error_page; location = $shortcut" /etc/nginx/sites-available/default
+service nginx restart
