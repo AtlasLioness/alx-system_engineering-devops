@@ -4,11 +4,8 @@
 import requests
 
 
-def recurse(subreddit, hot_list=None, after=None):
+def recurse(subreddit, hot_list=[], after=None):
     """Returns a list w/ titles of all hot articles for a given subreddit."""
-    if hot_list is None:
-        hot_list = []
-
     if isinstance(subreddit, str):
         url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
         headers = {"User-Agent": "Mozilla/5.0"}
