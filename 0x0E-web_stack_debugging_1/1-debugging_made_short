@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Making fix short and sweet
 sudo rm /etc/nginx/sites-enabled/default
 sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo service nginx restart
+sudo service nginx start
+sudo service nginx stop
