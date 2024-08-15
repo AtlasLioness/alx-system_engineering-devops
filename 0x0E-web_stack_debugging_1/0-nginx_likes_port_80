@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Script to automate fix to debug container's Nginx installation
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+service nginx restart
