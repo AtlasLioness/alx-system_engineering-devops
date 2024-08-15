@@ -2,4 +2,4 @@
 # Makes fix short and sweet
 sudo rm /etc/nginx/sites-enabled/default
 sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-{ sudo service nginx start; sudo pkill nginx; }
+sudo service nginx restart; sudo service nginx stop
