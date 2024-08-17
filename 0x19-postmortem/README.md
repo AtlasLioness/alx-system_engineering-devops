@@ -1,12 +1,13 @@
 # Postmortem: Website Outage on July 15, 2024
+The Memory Leak That Triggered a Red Wedding for Our Server
 
-## Issue Summary
+## Issue Summary - The Memory Leak That Knocked Our Website Off the Iron Throne
 
 **Duration**: The outage lasted for 2 hours, from 08:00 AM to 10:00 AM UTC.  
 **Impact**: 70% of users experienced slow response times, and 30% couldn’t access our website at all. This caused a drop in successful transactions on the e-commerce platform.  
-**Root Cause**: The root cause was a memory leak in the application server that led to the server running out of resources, making the web services unresponsive.
+**Root Cause**: A rogue memory leak in the application server was the treacherous villain, draining resources until the server could no longer fight for the throne.
 
-## Timeline
+## Timeline (AKA: The battle of the server)
 
 - **08:00 AM**: The issue was detected by an automated monitoring alert, showing high latency on the website.
 - **08:05 AM**: I checked the alert and saw that memory usage on the application server had spiked.
@@ -18,15 +19,15 @@
 - **09:10 AM**: The memory leak in the session management service was identified as the root cause.
 - **09:15 AM**: We restarted the application server to temporarily fix the issue while preparing a permanent solution.
 - **09:30 AM**: The development team deployed a patch to fix the memory leak.
-- **10:00 AM**: Everything was back to normal, and the services were fully restored.
+- **10:00 AM**: Everything was back to normal, and the services were fully restored.Peace was restored across the realm !
 
-## Root Cause and Resolution
+## Root Cause and Resolution - The Fall of a Noble server
 
 The problem was a memory leak in the session management service of our application server. The leak happened because user sessions weren’t being cleaned up properly, so the server’s memory kept filling up until it couldn’t handle any more requests. This led to slow responses and service outages for a large number of users.
 
 To fix it, we restarted the application server to clear the memory, which temporarily brought things back online. Then, we found and fixed the buggy code causing the memory leak and deployed a patch to prevent it from happening again.
 
-## Corrective and Preventative Measures
+## Corrective and Preventative Measures - Fortifying the Kingdom
 
 To make sure this doesn’t happen again, here’s what we’ll do:
 
@@ -42,4 +43,8 @@ To make sure this doesn’t happen again, here’s what we’ll do:
    - [ ] Hold a training session on memory management best practices.
    - [ ] Review the session management code to find and fix any other issues.
 
-By taking these steps, we’ll reduce the chances of this happening again and make our services more reliable.
+With these fortifications in place, we’ll ensure our server holds the Iron Throne, serving our users with the strength and stability of House Stark – no more unscheduled abdications!
+
+### Here’s a quick visual of our battle:
+
+![Our Server's Red Wedding](https://i.imgur.com/wwSCW8v.jpeg)
