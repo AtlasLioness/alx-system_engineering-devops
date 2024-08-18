@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Script that installs and configures HAproxy on lb-01 server
+
+sudo apt update
+sudo apt upgrade -y
+
+if ! [ -x "$(command -v haproxy)" ]; then
+sudo apt install -y haproxy
+fi
+
+echo "ENABLED=1" > /etc/default/haproxy
+
+echo "
+frontend 11thway.tech
+bind *:80
+mode http
+default_backend servers
+
+backend servers
+balance roundrobin
+server 364197-web-01 3.86.7.210:80 check
+server 364197-web-02 100.25.202.154:80 check" >> /etc/haproxy/haproxy.cfg
+
+sudo ufw allow 80/tcp
+
+sudo service haproxy restart
