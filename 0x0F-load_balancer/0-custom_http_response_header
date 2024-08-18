@@ -8,6 +8,6 @@ fi
 
 sudo ufw allow "Nginx HTTP"
 
-sudo sed -i '/server_name _;/ \\tadd_header X-Served-By $hostname;' /etc/nginx/sites-available/default
+sudo sed -i '/server_name _;/a \\tadd_header X-Served-By $hostname;' /etc/nginx/sites-available/default
 
 sudo service nginx restart
